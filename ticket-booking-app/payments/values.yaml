@@ -1,0 +1,5 @@
+image:
+  repository: busybox
+  tag: latest
+  pullPolicy: IfNotPresent
+appMessage: "Welcome to the Ticket Booking Payment Service"

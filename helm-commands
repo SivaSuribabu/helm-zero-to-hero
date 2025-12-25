@@ -1,0 +1,63 @@
+#how to see the helm version
+helm version
+
+#how to add the repository
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo add eks https://aws.github.io/eks-charts
+
+#how to find the chart which we want
+helm search repo bitnami | grep prometheus
+
+#how to see how many charts that repo had
+helm search repo bitnami | wc -l
+
+#how to install chart using helm
+helm install nginx bitnami/nginx 
+
+#how to connect to eks cluster with helm
+kubectl config current-cluster
+kubectl config use-context "eks-cluster-abc"
+then
+helm install
+
+#how to install chart using helm
+helm search repo bitnami | grep promethues
+helm install promethues bitnami/promethues
+
+#how to list the all installed charts
+helm list
+
+#how to uninstall the chart using helm
+helm uninstall promethues
+
+#how to package an  e-commerce application using helm
+
+e-commerce-application
+	|
+	|
+	--payments-service --> create a chart |
+					      |-------------> add into the repo
+	--shipping-service --> create a chart |	
+
+1. create a direcotry tickets-booking-app
+mkdir -p tickets-booking-app| {payments/shipping}
+
+2. cd tickets-booking-app
+
+3. create charts 
+	helm create payments 
+	helm create shipping
+
+4. cd payments 
+
+5. ls
+
+6. cd to templates
+
+7. edit the deployments.yaml , values.yaml 
+
+8. heml package payments
+
+9. helm package shipping 
+
+10. helm repo index . #adding the charts into the repo
